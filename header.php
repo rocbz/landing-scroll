@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
-    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta charset="<?php echo get_bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <?php if (is_singular() && pings_open(get_queried_object())) : ?>
-        <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+        <link rel="pingback" href="<?php echo get_bloginfo('pingback_url'); ?>">
     <?php endif; ?>
     <?php wp_head(); ?>
 
@@ -13,7 +13,7 @@
 
     <title><?php bloginfo('name'); ?><?php if (wp_title('', false)) {
             echo ' |';
-        } ?><?php wp_title(''); ?></title>
+        } ?><?php echo wp_get_document_title(); ?></title>
 
     <link rel="shortcut icon" type='image/x-icon'
           href="<?php echo get_stylesheet_directory_uri(
@@ -34,13 +34,14 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
+    <!-- Removed: googleapis.com - Trying to avoid external servers/services
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
         rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css?family=El+Messiri:400,500,600,700&amp;subset=arabic,cyrillic"
         rel="stylesheet">
-
+    -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
             type="text/javascript"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -53,7 +54,7 @@
     . $_SERVER['REQUEST_URI']; ?>"/>
 
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Global site tag (gtag.js) - 
     <script async
             src="https://www.googletagmanager.com/gtag/js?id=UA-41020127-19"></script>
     <script>
@@ -65,7 +66,7 @@
 
         gtag('config', 'UA-41020127-19');
     </script>
-
+Google Analytics -->
 
     <!-- Custom Scroll 100vh step - REMOVE IF YOU DO NOT WANT TO USE ON ALL DEVICES-->
     <script>
