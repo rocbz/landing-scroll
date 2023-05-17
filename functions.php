@@ -9,13 +9,15 @@ function SITE() {
 	return $SITE;
 }
 // add css and js
-wp_enqueue_style( 'main', get_template_directory_uri() . '/build/css/app.css',false,'1.1','all');
-wp_enqueue_script( 'main', get_template_directory_uri() . '/build/js/app.js', array(), '1.0.0', true );
-    // Deregister the default jQuery included with WordPress
+function site_enqueue_scripts() {
+    wp_enqueue_style('main', get_template_directory_uri() . '/build/css/app.css', false, '1.1', 'all');
+    wp_enqueue_script('main', get_template_directory_uri() . '/build/js/app.js', array(), '1.0.0', true);
     wp_deregister_script('jquery');
-    // Register and enqueue jQuery & AOS from a local copy
     wp_enqueue_script('jquery', get_template_directory_uri() . '/build/js/jquery-3.3.1.min.js', array(), '3.3.1', true);
     wp_enqueue_script('aos', get_template_directory_uri() . '/build/js/aos-2.3.1.js', array(), '2.3.1', true);
+}
+
+add_action('wp_enqueue_scripts', 'site_enqueue_scripts');
 
 // disable for posts
 add_filter('use_block_editor_for_post', '__return_false', 10);
