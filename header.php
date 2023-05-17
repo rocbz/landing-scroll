@@ -84,62 +84,64 @@ Google Analytics -->
 <body <?php body_class(); ?>>
 <?php $data = get_fields(get_options_page_id('site-options')); ?>
 
-<div class='header header-mob'>
-    <div class='align'>
-        <img class='header-logo' src='<?= $data['logo']['url']; ?>'>
-        <div class='header-ham'>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
-</div>
-
-<div class='header header-desk'>
-    <div class='align'>
-        <img class='header-logo' src='<?= $data['logo']['url']; ?>'>
-        <div class='header-blind'>
-            <div class='header-menu'>
-                <ul>
-                    <?php foreach ($data['menu'] as $item) { ?>
-                        <li data-target='<?= $item['target']; ?>'><?= $item['title']; ?></li>
-                    <?php } ?>
-                </ul>
-            </div>
-            <div class='header-social'>
-                <a href='<?= $data['github']; ?>' target='_blank'><img
-                        class='hs-gh icon-filter'
-                        src='<?= SITE()->resource(
-                            '../build/img/hs-gh.svg'
-                        ); ?>'></a>
-                <a href='<?= $data['npm']; ?>' target='_blank'><img
-                        class='hs-np icon-filter'
-                        src='<?= SITE()->resource(
-                            '../build/img/hs-np.svg'
-                        ); ?>'></a>
-                <!--<a href='<? /*= $data['linked_in']; */ ?>' target='_blank'><img
-                        class='hs-li icon-filter'
-                        src='<? /*= SITE()->resource('../build/img/hs-li.svg'); */ ?>'></a>-->
-                <!--<a href='<? /*= $data['twitter']; */ ?>' target='_blank'><img
-                        class='hs-tw icon-filter'
-                        src='<? /*= SITE()->resource('../build/img/hs-tw.svg'); */ ?>'></a>-->
-                <!--<a href='<? /*= $data['instagram']; */ ?>' target='_blank'><img
-                        class='hs-in icon-filter'
-                        src='<? /*= SITE()->resource('../build/img/hs-in.svg'); */ ?>'></a>-->
-            </div>
-
-            <!-- Custom Lamguage Switcher -->
-
-            <div class='header-lang'>
-                <a href='/'><img class='hl-en' src='<?= SITE()->resource(
-                        '../build/img/' . ((ICL_LANGUAGE_CODE == 'en')
-                            ? 'hl-en-h' : 'hl-en-n') . '.svg'
-                    ); ?>'></a>
-                <a href='/ar/'><img class='hl-ar' src='<?= SITE()->resource(
-                        '../build/img/' . ((ICL_LANGUAGE_CODE == 'ar')
-                            ? 'hl-ar-h' : 'hl-ar-n') . '.svg'
-                    ); ?>'></a>
+<header>
+    <div class='header header-mob'>
+        <div class='align'>
+            <img class='header-logo' src='<?= $data['logo']['url']; ?>'>
+            <div class='header-ham'>
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
         </div>
     </div>
-</div>
+
+    <div class='header header-desk'>
+        <div class='align'>
+            <img class='header-logo' src='<?= $data['logo']['url']; ?>'>
+            <div class='header-blind'>
+                <div class='header-menu'>
+                    <ul>
+                        <?php foreach ($data['menu'] as $item) { ?>
+                            <li data-target='<?= $item['target']; ?>'><?= $item['title']; ?></li>
+                        <?php } ?>
+                    </ul>
+                </div>
+                <div class='header-social'>
+                    <a href='<?= $data['github']; ?>' target='_blank'><img
+                            class='hs-gh icon-filter'
+                            src='<?= SITE()->resource(
+                                '../build/img/hs-gh.svg'
+                            ); ?>'></a>
+                    <a href='<?= $data['npm']; ?>' target='_blank'><img
+                            class='hs-np icon-filter'
+                            src='<?= SITE()->resource(
+                                '../build/img/hs-np.svg'
+                            ); ?>'></a>
+                    <!--<a href='<? /*= $data['linked_in']; */ ?>' target='_blank'><img
+                            class='hs-li icon-filter'
+                            src='<? /*= SITE()->resource('../build/img/hs-li.svg'); */ ?>'></a>-->
+                    <!--<a href='<? /*= $data['twitter']; */ ?>' target='_blank'><img
+                            class='hs-tw icon-filter'
+                            src='<? /*= SITE()->resource('../build/img/hs-tw.svg'); */ ?>'></a>-->
+                    <!--<a href='<? /*= $data['instagram']; */ ?>' target='_blank'><img
+                            class='hs-in icon-filter'
+                            src='<? /*= SITE()->resource('../build/img/hs-in.svg'); */ ?>'></a>-->
+                </div>
+
+                <!-- Custom Language Switcher -->
+
+                <div class='header-lang'>
+                    <a href='/'><img class='hl-en' src='<?= SITE()->resource(
+                            '../build/img/' . ((ICL_LANGUAGE_CODE == 'en')
+                                ? 'hl-en-h' : 'hl-en-n') . '.svg'
+                        ); ?>'></a>
+                    <a href='/ar/'><img class='hl-ar' src='<?= SITE()->resource(
+                            '../build/img/' . ((ICL_LANGUAGE_CODE == 'ar')
+                                ? 'hl-ar-h' : 'hl-ar-n') . '.svg'
+                        ); ?>'></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
