@@ -34,18 +34,18 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
-    <!-- Removed: googleapis.com - Trying to avoid external servers/services
+    <!-- Removed: googleapis.com + JS - Trying to avoid external servers/services
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
         rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css?family=El+Messiri:400,500,600,700&amp;subset=arabic,cyrillic"
         rel="stylesheet">
-    -->
+   
     <script src="/build/js/jquery-3.3.1.min.js"
             type="text/javascript"></script>
     <script src="/build/js/aos-2.3.1.js"></script>
-
+    -->
     <meta property="og:title" content="<?= SITE()->getMeta('meta_title'); ?>"/>
     <meta property="og:description"
           content="<?= SITE()->getMeta('meta_desc'); ?>"/>
