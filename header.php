@@ -42,9 +42,9 @@
         href="https://fonts.googleapis.com/css?family=El+Messiri:400,500,600,700&amp;subset=arabic,cyrillic"
         rel="stylesheet">
     -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    <script src="/build/js/jquery-3.3.1.min.js"
             type="text/javascript"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/build/js/aos-2.3.1.js"></script>
 
     <meta property="og:title" content="<?= SITE()->getMeta('meta_title'); ?>"/>
     <meta property="og:description"
