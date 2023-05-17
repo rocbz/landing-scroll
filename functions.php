@@ -91,4 +91,14 @@ class SiteObject {
 	}
 }
 
+function enqueue_scripts() {
+    // Deregister the default jQuery included with WordPress
+    wp_deregister_script('jquery');
+
+    // Register and enqueue jQuery from a local copy
+    wp_enqueue_script('jquery', get_template_directory_uri() . '/build/js/jquery-3.3.1.min.js', array(), '3.3.1', true);
+    wp_enqueue_script('aos', get_template_directory_uri() . '/build/js/aos-2.3.1.js', array(), '2.3.1', true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_scripts');
+
 ?>
